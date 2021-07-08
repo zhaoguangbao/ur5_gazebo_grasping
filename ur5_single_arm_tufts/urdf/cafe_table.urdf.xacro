@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:macro name="cafe_table" params="prefix">
+    <link name="${prefix}cafe_table_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://ur5_single_arm_tufts/meshes/cafe_table.dae"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <geometry>
+          <mesh filename="package://ur5_single_arm_tufts/meshes/cafe_table.dae"/>
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+</robot>
