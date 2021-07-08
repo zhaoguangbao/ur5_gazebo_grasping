@@ -22,3 +22,7 @@ rosrun opencv tf_listener.py object_frame:="/object_frame should be modified"
 rosrun ur5_single_arm_moveit_config grasping_demo_vision2.py
 ```
 
+## note for me
+
+git push -u master master
+
