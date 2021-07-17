@@ -23,6 +23,28 @@
   <xacro:include filename="$(find ur5_single_arm_tufts)/urdf/cafe_table.urdf.xacro" />
   <xacro:cafe_table prefix="" />
 
+  <!-- cubes -->
+  <xacro:include filename="$(find ur5_single_arm_tufts)/urdf/cubes.urdf.xacro" />
+  <xacro:cubes prefix="1" />
+  <xacro:cubes prefix="2" />
+  <xacro:cubes prefix="3" />
+
+  <joint name="world_cube1_joint" type="fixed">
+    <parent link="world" />
+    <child link = "cube1" />
+    <origin xyz="0.4 -0.2 0.775" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint name="world_cube2_joint" type="fixed">
+    <parent link="world" />
+    <child link = "cube2" />
+    <origin xyz="0.4 0 0.775" rpy="0.0 0.0 0.0" />
+  </joint>
+  <joint name="world_cube3_joint" type="fixed">
+    <parent link="world" />
+    <child link = "cube3" />
+    <origin xyz="0.6 0.0 0.775" rpy="0.0 0.0 0.0" />
+  </joint>
+
     <!-- kinect -->
   <!--xacro:include filename="$(find ur5_single_arm_tufts)/urdf/sensors/kinect/kinect.urdf.xacro" />
 
@@ -32,7 +54,8 @@
 
   <xacro:include filename="$(find kinect_v2)/urdf/kinect_v2.urdf.xacro" />
     <xacro:kinect_v2  parent="world">
-        <origin xyz="0.6 0 1.00"
+<!--        <origin xyz="0.6 0 1.00"-->
+        <origin xyz="0.6 0 1.594"
                 rpy="0 1.57 0" />
   </xacro:kinect_v2>
 

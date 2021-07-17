@@ -81,10 +81,11 @@ Visualization Manager:
       Unreliable: false
       Value: false
       Visibility:
-        "": true
         Grid: true
+        MarkerArray: true
         MotionPlanning: true
         PointCloud2: true
+        TF: true
         Value: true
       Zoom Factor: 1
     - Acceleration_Scaling_Factor: 1
@@ -419,6 +420,8 @@ Visualization Manager:
           Value: false
         forearm_link:
           Value: false
+        grasp_link:
+          Value: true
         gripper_base_link:
           Value: false
         gripper_finger1_finger_link:
@@ -442,7 +445,7 @@ Visualization Manager:
         kinect2_ir_link:
           Value: false
         kinect2_ir_optical_frame:
-          Value: false
+          Value: true
         kinect2_rgb_link:
           Value: false
         kinect2_rgb_optical_frame:
@@ -499,8 +502,18 @@ Visualization Manager:
                 kinect2_ir_optical_frame:
                   {}
               kinect2_rgb_optical_frame:
-                {}
+                grasp_link:
+                  {}
       Update Interval: 0
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /detect_grasps/plot_grasps
+      Name: MarkerArray
+      Namespaces:
+        finger: true
+        hand_base: true
+      Queue Size: 100
       Value: true
   Enabled: true
   Global Options:
@@ -518,7 +531,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 2.731904983520508
+      Distance: 2.3566558361053467
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -533,10 +546,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.27520331740379333
+      Pitch: 0.10520370304584503
       Target Frame: world
       Value: XYOrbit (rviz)
-      Yaw: 5.149960994720459
+      Yaw: 4.349925518035889
     Saved: ~
 Window Geometry:
   Camera:

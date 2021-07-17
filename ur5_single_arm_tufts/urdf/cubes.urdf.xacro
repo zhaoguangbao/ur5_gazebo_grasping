@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <xacro:macro name="cubes" params="prefix">
+    <!-- Cubes -->
+        <link name="cube${prefix}">
+            <inertial>
+                <mass value="0.0565" />
+                <inertia ixx="2.3541666666666672e-05" ixy="0.0" ixz="0.0"
+                         iyy="2.3541666666666672e-05" iyz="0.0"
+                         izz="2.3541666666666672e-05" />
+            </inertial>
+            <collision>
+                <geometry>
+                    <box size="0.05 0.05 0.05"/>
+                </geometry>
+            </collision>
+            <visual>
+                <geometry>
+                    <box size="0.05 0.05 0.05"/>
+                </geometry>
+            </visual>
+        </link>
+    </xacro:macro>
+
+</robot>

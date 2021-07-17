@@ -26,11 +26,44 @@
     <origin xyz="0.6 0.0 1.8" rpy="0.0 ${pi/2} 0.0" />
   </xacro:kinect-->
 
+
+  <!-- depth camera out of robot for kinect v2,
+  the range of detection is from 0.8 m to 4.0 m
+  kinect v2 cannot be installed in wrist, because of the limitation of the range of detection
+  -->
+  <!-- depth camera installed in wrist  -->
+  <!-- minimum depth distance of realsense D435 is 0.11 m  -->
+  <!--      <xacro:kinect_v2  parent="ee_link">-->
+  <!--          <origin xyz="-0.05 0 0.05"-->
+  <!--                  rpy="0 0 0" />-->
+<!--  <xacro:include filename="$(find kinect_v2)/urdf/kinect_v2.urdf.xacro" />-->
+
+<!--    <xacro:kinect_v2  parent="world">-->
+<!--        <origin xyz="0.6 0 1.00"-->
+<!--                rpy="0 1.57 0" />-->
+<!--      -->
+<!--  </xacro:kinect_v2>-->
+
   <xacro:include filename="$(find kinect_v2)/urdf/kinect_v2.urdf.xacro" />
-    <xacro:kinect_v2  parent="world">
-        <origin xyz="0.6 0 1.00"
-                rpy="0 1.57 0" />
+
+  <xacro:kinect_v2  parent="world">
+<!--    <origin xyz="0.6 0 1.00"-->
+<!--            rpy="0 1.57 0" /> -->
+
+    <origin xyz="1.0 0 0.8"
+            rpy="0 2.08 0" />
+
   </xacro:kinect_v2>
+
+
+  <!-- realsense d435 -->
+<!--  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />-->
+
+<!--  <xacro:sensor_d435 name="camera" topics_ns="camera" parent="ee_link" publish_pointcloud="true">-->
+<!--              <origin xyz="-0.05 0 0.05"-->
+<!--                      rpy="0 -0.25 0" />-->
+
+<!--  </xacro:sensor_d435>-->
 
 
   <!-- kinect, ir, rgb sensor-->
