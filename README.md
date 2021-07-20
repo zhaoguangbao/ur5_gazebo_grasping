@@ -8,7 +8,7 @@ ubuntu 18.04 + ros melodic
 
 ## NOTE
 
-The repository is build for construct the grasping simulation platform in ros. Presently, It is used to achieve grasping by GPD algorithm.
+The repository is built for constructing the grasping simulation platform in ros. Presently, It is used to achieve grasping by GPD algorithm.
 
 ## run
 
