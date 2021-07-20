@@ -4,6 +4,9 @@
     <arg name="paused" default="true" doc="Starts gazebo in paused mode" />
     <arg name="gui" default="true" doc="Starts gazebo gui" />
 
+    <!-- send robot urdf to param server -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ur5_single_arm_tufts)/urdf/ur5_single_arm.urdf.xacro'"/>
+
     <!-- startup simulated world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
 <!--        <arg name="world_name" default="worlds/empty.world"/>-->
@@ -11,9 +14,6 @@
         <arg name="paused" value="$(arg paused)"/>
         <arg name="gui" value="$(arg gui)"/>
     </include>
-
-    <!-- send robot urdf to param server -->
-    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ur5_single_arm_tufts)/urdf/ur5_single_arm.urdf.xacro'"/>
 
 <!--    <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 1 fixed_base world 100" />-->
     <!-- push robot_description to factory and spawn robot in gazebo -->

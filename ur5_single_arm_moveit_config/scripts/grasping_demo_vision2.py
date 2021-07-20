@@ -71,16 +71,16 @@ def callback(pose):
     print("Point 5")
     rospy.sleep(2)
 
-    pose_target.position.x = pose_target.position.x - 0.1
-    pose_target.position.z = pose_target.position.z + 0.2
+    # pose_target.position.x = pose_target.position.x - 0.1
+    pose_target.position.z = pose_target.position.z + 0.25
     arm_group.set_pose_target(pose_target)
     plan = arm_group.go()
     print("Point 6")
 
-    pose_target.position.x = pose_target.position.x + 0.5
-    arm_group.go()
-    rospy.sleep(3)
-    print("Point 7")
+    # pose_target.position.x = pose_target.position.x + 0.5
+    # arm_group.go()
+    # rospy.sleep(3)
+    # print("Point 7")
 
     hand_group.set_named_target("open")
     plan = hand_group.go()

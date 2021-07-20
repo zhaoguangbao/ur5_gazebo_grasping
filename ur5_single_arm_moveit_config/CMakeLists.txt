@@ -29,6 +29,9 @@ add_executable(test_tf_grasp src/${PROJECT_NAME}/test_tf_grasp.cpp)
 add_dependencies(test_tf_grasp gpd_ros_gencpp) # gpd_ros/GraspConfig.h: No such file or directory
 target_link_libraries(test_tf_grasp ${catkin_LIBRARIES})
 
+add_executable(test_pcd2rviz src/${PROJECT_NAME}/test_pcd2rviz.cpp)
+target_link_libraries(test_pcd2rviz ${catkin_LIBRARIES})
+
 install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   PATTERN "setup_assistant.launch" EXCLUDE)
 install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})

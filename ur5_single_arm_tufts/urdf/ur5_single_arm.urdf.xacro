@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="ur5" >
 
   <!-- common stuff -->
@@ -15,8 +14,11 @@
   <xacro:include filename="$(find robotiq_85_description)/urdf/robotiq_85_gripper.urdf.xacro" />
 
   <!-- gripper -->
-  <xacro:robotiq_85_gripper prefix="" parent="ee_link" >
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+<!--  <xacro:robotiq_85_gripper prefix="" parent="ee_link" >-->
+<!--    <origin xyz="0 0 0" rpy="0 0 0"/>-->
+<!--  </xacro:robotiq_85_gripper>-->
+  <xacro:robotiq_85_gripper prefix="" parent="wrist_3_link" >
+    <origin xyz="0.0 0.0823 0.0" rpy="0.0 0.0 1.5707" />
   </xacro:robotiq_85_gripper>
 
     <!-- kinect -->
