@@ -39,6 +39,20 @@ rosrun ur5_single_arm_moveit_config test_movegroup
 
 ## note for myself
 
+```bash
 git push -u master master
 git push
+```
+```bash
+
+sudo apt install ros-melodic-moveit
+sudo apt install ros-melodic-pcl-conversions
+
+sudo apt install ros-melodic-joint-state-publisher-gui
+sudo apt install ros-melodic-position-controllers
+sudo apt-get install ros-melodic-joint-trajectory-controller
+sudo apt install ros-melodic-joint-state-controller
+```
+
+
 
