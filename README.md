@@ -36,6 +36,14 @@ rosrun ur5_single_arm_moveit_config test_tf_grasp
 # should run after /grasp_link has been published
 rosrun ur5_single_arm_moveit_config test_movegroup
 ```
+replaced with
+```bash
+roslaunch ur5_single_arm_moveit_config test_ur5_gazebo.launch
+roslaunch ur5_single_arm_moveit_config ur5_moveit_planning_execution.launch
+roslaunch gpd_ros ur5.launch
+rosrun ur5_single_arm_moveit_config test_tf_grasp
+roslaunch ur5_single_arm_moveit_config test_ur5_grasp.launch
+```
 
 ## note for myself
 

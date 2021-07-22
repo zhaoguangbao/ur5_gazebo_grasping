@@ -130,6 +130,47 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          camera_bottom_screw_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_color_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_color_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_depth_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_depth_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_left_ir_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_left_ir_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          camera_right_ir_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_right_ir_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           ee_link:
             Alpha: 1
             Show Axes: false
@@ -293,6 +334,47 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          camera_bottom_screw_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_color_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_color_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_depth_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_depth_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_left_ir_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_left_ir_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          camera_right_ir_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          camera_right_ir_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           ee_link:
             Alpha: 1
             Show Axes: false
@@ -416,12 +498,30 @@ Visualization Manager:
           Value: false
         base_link:
           Value: true
+        camera_bottom_screw_frame:
+          Value: false
+        camera_color_frame:
+          Value: false
+        camera_color_optical_frame:
+          Value: false
+        camera_depth_frame:
+          Value: true
+        camera_depth_optical_frame:
+          Value: false
+        camera_left_ir_frame:
+          Value: false
+        camera_left_ir_optical_frame:
+          Value: false
+        camera_link:
+          Value: false
+        camera_right_ir_frame:
+          Value: false
+        camera_right_ir_optical_frame:
+          Value: false
         ee_link:
           Value: false
         forearm_link:
           Value: false
-        grasp_link:
-          Value: true
         gripper_base_link:
           Value: false
         gripper_finger1_finger_link:
@@ -481,19 +581,33 @@ Visualization Manager:
                     wrist_2_link:
                       wrist_3_link:
                         ee_link:
-                          gripper_base_link:
-                            gripper_finger1_inner_knuckle_link:
-                              gripper_finger1_finger_tip_link:
-                                {}
-                            gripper_finger1_knuckle_link:
-                              gripper_finger1_finger_link:
-                                {}
-                            gripper_finger2_inner_knuckle_link:
-                              gripper_finger2_finger_tip_link:
-                                {}
-                            gripper_finger2_knuckle_link:
-                              gripper_finger2_finger_link:
-                                {}
+                          camera_bottom_screw_frame:
+                            camera_link:
+                              camera_depth_frame:
+                                camera_color_frame:
+                                  camera_color_optical_frame:
+                                    {}
+                                camera_depth_optical_frame:
+                                  {}
+                                camera_left_ir_frame:
+                                  camera_left_ir_optical_frame:
+                                    {}
+                                camera_right_ir_frame:
+                                  camera_right_ir_optical_frame:
+                                    {}
+                        gripper_base_link:
+                          gripper_finger1_inner_knuckle_link:
+                            gripper_finger1_finger_tip_link:
+                              {}
+                          gripper_finger1_knuckle_link:
+                            gripper_finger1_finger_link:
+                              {}
+                          gripper_finger2_inner_knuckle_link:
+                            gripper_finger2_finger_tip_link:
+                              {}
+                          gripper_finger2_knuckle_link:
+                            gripper_finger2_finger_link:
+                              {}
                         tool0:
                           {}
           kinect2_base_link:
@@ -502,8 +616,7 @@ Visualization Manager:
                 kinect2_ir_optical_frame:
                   {}
               kinect2_rgb_optical_frame:
-                grasp_link:
-                  {}
+                {}
       Update Interval: 0
       Value: true
     - Class: rviz/MarkerArray
@@ -511,8 +624,7 @@ Visualization Manager:
       Marker Topic: /detect_grasps/plot_grasps
       Name: MarkerArray
       Namespaces:
-        finger: true
-        hand_base: true
+        {}
       Queue Size: 100
       Value: true
   Enabled: true
@@ -531,7 +643,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 2.3566558361053467
+      Distance: 2.563985586166382
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
