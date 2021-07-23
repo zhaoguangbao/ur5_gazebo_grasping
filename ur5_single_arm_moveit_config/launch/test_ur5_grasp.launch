@@ -1,8 +1,9 @@
 <launch>
+    <arg name="runtype" default="0"/>
     <node name="test_movegroup" pkg="ur5_single_arm_moveit_config" type="test_movegroup" output="screen">
 
         <!-- 0: grasp, 1: go home for kinect, 2: go home for realsense -->
-        <param name="run_type" value="0" />
+        <param name="run_type" value="$(arg runtype)" />
 
     </node>
 

@@ -107,6 +107,15 @@ public:
             ROS_WARN("Plan Failed...");
         ros::Duration(1.0).sleep();
     }
+    void goPreGrasp()
+    {
+        goHomeJ();
+        geometry_msgs::Pose current_pose=move_group_interface.getCurrentPose().pose;
+        current_pose.position.y=current_pose.position.y-0.2;
+        current_pose.position.z=current_pose.position.z+0.2;
+        goTargetPose(current_pose);
+        ros::Duration(1.0).sleep();
+    }
 private:
     geometry_msgs::Pose getTargetPose(tf::StampedTransform& transform)
     {
@@ -190,6 +199,7 @@ int main(int argc, char** argv) {
 
     // node_handle.getParam("run_type", runtype);
     node_handle.param<int>("run_type", runtype, eGrasp);
+    ROS_INFO("run_type: %d", runtype);
 
     // ROS spinning must be running for the MoveGroupInterface to get information
     // about the robot's state. One way to do this is to start an AsyncSpinner
@@ -200,16 +210,19 @@ int main(int argc, char** argv) {
 
     switch (runtype) {
         case eGrasp:
+            // need to locate the position where the pose information was published
             graspDemo.goHome();
             graspDemo.goHomeJ();
+            graspDemo.goPreGrasp();
             graspDemo.goToGrasp();
             break;
         case eKinect:
+            // TODO: unable to get pose information when using kinect
             graspDemo.goHome();
             break;
         case eRealsense:
             graspDemo.goHome();
-            graspDemo.goHomeJ();
+            graspDemo.goPreGrasp();
             break;
         default:
             break;
