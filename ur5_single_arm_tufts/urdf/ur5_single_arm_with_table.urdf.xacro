@@ -59,6 +59,15 @@
                 rpy="0 1.57 0" />
   </xacro:kinect_v2>
 
+  <!-- realsense d435 -->
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
+
+  <xacro:sensor_d435 name="camera" topics_ns="camera" parent="ee_link" publish_pointcloud="true">
+    <origin xyz="-0.05 0 0.05"
+            rpy="0 -0.25 0" />
+
+  </xacro:sensor_d435>
+
 
   <!-- kinect, ir, rgb sensor-->
 <!--   <xacro:include filename="$(find ur5_single_arm_tufts)/urdf/sensors/kinect2/common.xacro" />

@@ -45,6 +45,15 @@ rosrun ur5_single_arm_moveit_config test_tf_grasp
 roslaunch ur5_single_arm_moveit_config test_ur5_grasp.launch
 ```
 
+## run with pointnetgpd(test)
+
+```bash
+roslaunch ur5_single_arm_moveit_config test_ur5_gazebo.launch
+roslaunch ur5_single_arm_moveit_config ur5_moveit_planning_execution.launch
+rosrun ur5_single_arm_moveit_config test_sampleaboveplane
+python kinect2grasp.py(test)
+```
+
 ## note for myself
 
 ```bash
